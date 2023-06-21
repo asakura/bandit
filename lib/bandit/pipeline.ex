@@ -88,6 +88,8 @@ defmodule Bandit.Pipeline do
        ),
        do: {:ok, to_string(host), port || local_port}
 
+  @local_fallback_port 80
+
   @spec determine_local_port(ThousandIsland.Transport.socket_info()) :: integer()
   defp determine_local_port(local_info) do
     case local_info do
